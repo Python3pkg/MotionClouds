@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-from __future__ import division, print_function, absolute_import
+
 __author__ = "Laurent Perrinet INT - CNRS"
 __licence__ = 'GPLv2'
 """
@@ -395,7 +395,7 @@ def visualize(z_in, azimuth=25., elevation=30.,
 
     # Generate iso-surfaces at different energy levels
     surfaces = []
-    for i_, (threshold, opacity) in enumerate(zip(thresholds, opacities)):
+    for i_, (threshold, opacity) in enumerate(list(zip(thresholds, opacities))):
         surfaces.append(scene.visuals.Isosurface(z, level=threshold,
 #                                         color=Color(np.array(colorsys.hsv_to_rgb(1.*i_/len(thresholds), 1., 1.)), alpha=opacity),
                                     color=Color(np.array(colorsys.hsv_to_rgb(.66, 1., 1.)), alpha=opacity),
